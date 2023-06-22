@@ -1,0 +1,36 @@
+
+<form action="" [formGroup]="loginForm"  class="form-group"> 
+    <fieldset>
+        <legend>Login</legend>
+    <div>
+        <label for="email">Email</label>
+        <input type="text" id="name" name="email" class='form-control' formControlName="email">
+        <div
+        *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].touched || loginForm.controls['email'].dirty)">
+        <span style="color:red;font-size: 11px;" *ngIf="loginForm.controls['email'].errors?.['required']"> proper email is
+            required </span>
+        <span style="color:red;font-size: 11px;" *ngIf="loginForm.controls['email'].errors?.['pattern']">Invalid
+            email format.</span>
+    </div>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="name" name="password" class='form-control' formControlName="password">
+        <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched || loginForm.controls['password'].dirty)">
+            <span style="color:red;font-size: 11px;" *ngIf="loginForm.controls['password'].errors?.['required']"> password is required </span>
+            <span style="color:red;font-size: 11px;" *ngIf="loginForm.controls['password'].errors?.['minlength']"> password must be at least 6 characters long. </span>
+            <span style="color:red;font-size: 11px;" *ngIf="loginForm.controls['password'].errors?.['pattern']">Invalid password format.</span>
+
+    </div>
+    </div>
+    <div>
+       
+        <input type="button" value="login" (click)="login()">
+    </div>
+    <div>
+        <a href="http://localhost:4200/email">ForgotPassword..?</a>
+    </div>
+    
+    </fieldset>
+
+    </form>

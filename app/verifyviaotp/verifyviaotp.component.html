@@ -1,0 +1,10 @@
+<p>verifyviaotp works!</p>
+<form action="" class="form-group">
+    <div>
+        <label for="otp">OTP</label>
+        <input type="text" id="otp" name="otp" class='form-control' [(ngModel)]="otp" required>
+    </div>
+    <div>
+        <input type="button" value="verify" (click)="otpVerify()">
+    </div>
+</form>

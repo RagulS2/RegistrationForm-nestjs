@@ -1,0 +1,9 @@
+<p>email works!</p>
+
+<form #ngForm="ngForm" class="form-group">
+    <div>
+    <label for="email">Enter Your Email</label>
+    <input [(ngModel)]="email" placeholder="Enter your email here.." name="email" type="text" class="form-control">
+    </div>
+    <input type="button" value="submit" (click)="checkEmail()">
+    </form>

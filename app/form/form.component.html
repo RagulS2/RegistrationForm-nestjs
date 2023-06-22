@@ -1,0 +1,38 @@
+<form action="" [formGroup]="userForm" class="form-group">
+    <fieldset>
+        <legend>Sign-up</legend>
+
+        <label for="userName">Name</label>
+        <input type="text" id="userName" name="userName" class="form-control" formControlName="userName" >
+        <div
+            *ngIf="userForm.controls['userName'].invalid && (userForm.controls['userName'].touched || userForm.controls['name'].dirty)">
+            <span style="color:red;font-size: 11px;" *ngIf="userForm.controls['userName'].errors?.['required']"> Name is
+                required </span>
+            <span style="color:red;font-size: 11px;" *ngIf="userForm.controls['userName'].errors?.['minlength']"> Name
+                must be at least 3 characters long. </span>
+            <span style="color:red;font-size: 11px;" *ngIf="userForm.controls['userName'].errors?.['pattern']">Invalid
+                name format. Please use only letters and spaces.</span>
+        </div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" formControlName="email" >
+        <div
+            *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].touched || userForm.controls['email'].dirty)">
+            <span style="color:red;font-size: 11px;" *ngIf="userForm.controls['email'].errors?.['required']"> email is
+                required </span>
+            <span style="color:red;font-size: 11px;" *ngIf="userForm.controls['email'].errors?.['pattern']">Invalid
+                email format.</span>
+        </div>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control" formControlName="password" >
+        <div *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].touched || userForm.controls['password'].dirty)">
+            <span style="color:red;font-size: 11px;" *ngIf="userForm.controls['password'].errors?.['required']"> password is required </span>
+            <span style="color:red;font-size: 11px;" *ngIf="userForm.controls['password'].errors?.['minlength']"> password must be at least 6 characters long. </span>
+            <span style="color:red;font-size: 11px;" *ngIf="userForm.controls['password'].errors?.['pattern']">Invalid password format.</span>
+          </div>
+        <div>
+            <input type="button" value="create" (click)="signup()">
+        </div>
+    </fieldset>
+</form>

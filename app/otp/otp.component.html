@@ -1,0 +1,11 @@
+
+
+<form action="" class="form-group">
+    <div>
+        <label for="otp">OTP</label>
+        <input type="text" id="otp" name="otp" class='form-control' [(ngModel)]="body.otp" required>
+    </div>
+    <div>
+        <input type="button" value="verify" (click)="otp()">
+    </div>
+</form>

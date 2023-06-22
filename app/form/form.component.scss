@@ -1,0 +1,60 @@
+.form-group {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 100px auto;
+
+  fieldset {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 20px;
+
+    legend {
+      padding: 0 10px;
+      color: red;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input {
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      width: 100%;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+    }
+
+    div {
+      margin-bottom: 10px;
+
+      span.error-message {
+        color: red;
+        font-size: 11px;
+      }
+    }
+
+    input[type="button"] {
+      padding: 12px 18px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+}
